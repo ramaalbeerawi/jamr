@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <title>جمر | شاشة المطبخ</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { min-height: 100vh; }
+    .k-wrap { width: min(1600px, 100% - 1.5rem); margin-inline: auto; padding-block: 1rem 3rem; }
+    .k-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .k-brand { font-family: var(--display); font-size: 2.4rem; color: var(--chili); line-height: 1; }
+    .k-brand small { font-family: var(--text); font-size: 1rem; color: var(--ink-2); margin-inline-start: .6rem; }
+    .k-actions { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+    .k-live { font-size: var(--step--1); color: var(--ink-2); display: inline-flex; align-items: center; gap: .4rem; }
+    .k-live::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--ink-3); }
+    .k-live.is-on::before { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
+
+    .login { min-height: 80vh; display: grid; place-items: center; }
+    .login form { width: min(380px, 100%); display: grid; gap: 1rem; text-align: center; }
+    .login h1 { font-size: 4rem; color: var(--chili); }
+
+    .alerts { display: grid; gap: .5rem; margin-bottom: 1rem; }
+    .alerts:empty { display: none; }
+    .alert { padding: .8rem 1rem; border-radius: 14px; background: rgba(232, 53, 43, .16); border: 1px solid rgba(255, 138, 122, .6); display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+
+    /* تبويبات الموبايل */
+    .k-tabs { display: none; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .35rem; margin-bottom: 1rem; }
+    .k-tabs .btn { flex-direction: column; gap: .15rem; min-width: 0; min-height: 58px; padding: .35rem .2rem; font-size: .85rem; border-radius: 16px; white-space: nowrap; }
+    .k-tabs .count { display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; border-radius: 999px; background: rgba(0, 0, 0, .35); font-size: .8rem; }
+
+    .board { display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; }
+    .col { background: rgba(28, 10, 7, .5); border: 1px solid var(--line); border-radius: 22px; padding: .9rem; min-height: 200px; }
+    .col h2 { font-size: 1.7rem; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .8rem; }
+    .col h2 span { font-family: var(--text); font-size: 1rem; color: var(--ink-2); }
+    .col-list { display: grid; gap: .8rem; }
+    .col-empty { color: var(--ink-3); padding: 1rem 0; margin: 0; }
+
+    @media (max-width: 899px) {
+      .k-tabs { display: grid; }
+      .board { grid-template-columns: 1fr; }
+      .col { display: none; }
+      .col.is-active { display: block; }
+      .col h2 { display: none; }
+    }
+
+    .ticket { container-type: inline-size; background: #160806; border: 1px solid rgba(255, 246, 234, .12); border-radius: 18px; padding: 1rem; display: grid; gap: .65rem; }
+    .ticket.is-late { border: 2px solid #FF3B2F; box-shadow: 0 0 0 3px rgba(255, 59, 47, .25), 0 0 28px rgba(255, 59, 47, .3); }
+    .t-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+    .t-no { font-family: var(--display); font-size: 2.6rem; line-height: 1; }
+    .t-age { color: var(--ink-2); font-size: var(--step--1); }
+    .ticket.is-late .t-age { color: #FF8A7A; font-weight: 700; }
+    .t-type { font-weight: 700; font-size: 1.1rem; }
+    .t-who { display: flex; flex-wrap: wrap; gap: .2rem .75rem; align-items: baseline; }
+    .t-who a { color: var(--ink-2); }
+    .t-items { list-style: none; margin: 0; padding: .6rem 0; border-block: 1px solid var(--line); display: grid; gap: .5rem; }
+    .t-items b { font-size: 1.1rem; }
+    .t-mods { display: block; color: #FFC2B8; font-size: .95rem; }
+    .t-total { display: flex; justify-content: space-between; font-weight: 700; }
+    .t-note { color: var(--ink-2); font-size: var(--step--1); }
+    .t-wa { color: #FFB4A8; font-size: var(--step--1); }
+    .t-eta { color: var(--ink); font-size: var(--step--1); }
+
+    /* شريط الحالات */
+    .status-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+    .status-bar .btn { min-height: 52px; padding: .3rem .5rem; font-size: .95rem; border-radius: 14px; white-space: nowrap; }
+    @container (min-width: 420px) { .status-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .ready-pick { display: grid; gap: .5rem; padding: .75rem; border-radius: 14px; background: rgba(232, 53, 43, .1); border: 1px solid rgba(255, 140, 120, .35); }
+    .ready-pick p { margin: 0; font-weight: 600; }
+    .ready-pick .opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: .4rem; }
+    @container (min-width: 420px) { .ready-pick .opts { grid-template-columns: repeat(4, 1fr); } }
+    .ready-pick .btn { min-height: 52px; padding: .3rem; border-radius: 14px; }
+    .ready-pick .cancel { justify-self: start; min-height: 48px; }
+  </style>
+</head>
+<body>
+  <div class="k-wrap">
+    <section class="login" id="login">
+      <form id="loginForm">
+        <h1>جمر</h1>
+        <label class="field">
+          <span>كلمة سر المطبخ</span>
+          <input type="password" id="pass" autocomplete="current-password" required>
+        </label>
+        <p class="field-error" id="loginErr" role="alert"></p>
+        <button class="btn btn-lg" type="submit">افتح شاشة المطبخ</button>
+      </form>
+    </section>
+
+    <section id="app" hidden>
+      <header class="k-top">
+        <div class="k-brand">جمر<small>شاشة المطبخ</small></div>
+        <div class="k-actions">
+          <span class="k-live" id="live">مش متصل</span>
+          <button class="btn btn-sm" type="button" id="soundBtn" aria-pressed="false">شغّل صوت التنبيه</button>
+          <button class="btn btn-sm" type="button" id="clearAll">امسح كل الطلبات</button>
+          <button class="btn btn-sm" type="button" id="logout">اطلع</button>
+        </div>
+      </header>
+
+      <div class="alerts" id="alerts" role="alert"></div>
+
+      <div class="k-tabs" role="tablist" aria-label="حالات الطلبات" id="kTabs"></div>
+
+      <div class="board" id="board"></div>
+    </section>
+  </div>
+  <script src="/kitchen.js"></script>
+</body>
+</html>

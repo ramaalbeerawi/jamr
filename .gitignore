@@ -1,0 +1,18 @@
+# Only the site itself goes online. Everything else in this folder stays on this computer.
+/*
+!/.gitignore
+!/package.json
+!/server.cjs
+!/README.md
+!/.env.example
+!/public/
+!/assets/
+
+# never upload secrets or customer orders
+.env
+data/
+node_modules/
+
+# old versions of images
+assets/hero-old.jpg
+assets/hero-before-gold.jpg

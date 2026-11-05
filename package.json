@@ -1,0 +1,13 @@
+{
+  "name": "jamr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "جمر: shawarma ordering site with live kitchen screen and WhatsApp updates",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

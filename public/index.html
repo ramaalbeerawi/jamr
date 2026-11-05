@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>جمر | شاورما على الجمر، عمّان</title>
+  <meta name="description" content="شاورما على الجمر بشارع الرينبو، عمّان. اختار سندويشتك متل ما بتحب، واطلبها سفري أو كُلها عنّا.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_JO">
+  <meta property="og:site_name" content="جمر">
+  <meta property="og:title" content="جمر | شاورما على الجمر، عمّان">
+  <meta property="og:description" content="اختار سندويشتك متل ما بتحب، واطلبها سفري أو كُلها عنّا. شارع الرينبو، عمّان.">
+  <meta property="og:image" content="/assets/hero.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="572">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/hero.webp">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#menu">انتقل للمنيو</a>
+
+  <button class="btn btn-sm lang-toggle" id="langToggle" type="button" data-no-i18n>English</button>
+
+  <div class="splash" id="splash" aria-hidden="true">
+    <span class="splash-name" translate="no">جمر</span>
+  </div>
+
+  <main id="home">
+    <!-- الهيرو -->
+    <header class="hero">
+      <img class="hero-img" src="/assets/hero.webp" alt="سيخ الشاورما على الجمر" width="2000" height="1125" fetchpriority="high">
+      <canvas class="hero-steam" id="steam" aria-hidden="true"></canvas>
+      <div class="hero-fade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-name" translate="no">جمر</h1>
+        <p class="hero-line">شاورما على الجمر، بتختارها متل ما بتحب.</p>
+        <p class="hero-address">شارع الرينبو، عمّان</p>
+        <p class="hero-status" id="openStatus"><span class="dot" aria-hidden="true"></span><span class="status-text"></span></p>
+        <a class="btn btn-lg hero-cta" href="#menu">اطلب الآن</a>
+      </div>
+    </header>
+
+    <!-- فيديو من الصاج لإيدك -->
+    <section class="story" id="story" aria-label="من الصاج لإيدك">
+      <div class="story-stage">
+        <h2 class="story-title" id="storyTitle">من الصاج لإيدك</h2>
+        <div class="story-frame">
+          <video class="story-video" id="storyVideo" src="/assets/story.mp4" data-poster="/assets/story-poster.jpg" muted playsinline preload="auto" aria-hidden="true"></video>
+          <div class="story-missing" id="storyMissing" hidden>هون بينحط فيديو تحضير السندويشة</div>
+        </div>
+        <div class="story-shade" aria-hidden="true"></div>
+        <a class="btn btn-lg story-cta" id="storyCta" href="#menu">اطلب هلأ</a>
+      </div>
+    </section>
+
+    <!-- المنيو -->
+    <section class="menu section" id="menu" aria-labelledby="menuTitle">
+      <div class="wrap">
+        <h2 class="section-title" id="menuTitle">المنيو</h2>
+        <div class="tabs" role="tablist" aria-label="أقسام المنيو" id="menuTabs"></div>
+        <div class="menu-grid" id="menuGrid" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <!-- من مطبخنا -->
+    <section class="section kitchen-gallery" aria-labelledby="galleryTitle">
+      <div class="wrap">
+        <h2 class="section-title" id="galleryTitle">من مطبخنا</h2>
+        <div class="gallery">
+          <figure class="g g1"><img src="/assets/place-1.jpg" alt="من مطبخ جمر" width="800" height="600" loading="lazy" decoding="async"></figure>
+          <figure class="g g2"><img src="/assets/place-2.jpg" alt="من مطبخ جمر" width="800" height="600" loading="lazy" decoding="async"></figure>
+          <figure class="g g3"><img src="/assets/place-4.jpg" alt="من مطبخ جمر" width="800" height="600" loading="lazy" decoding="async"></figure>
+          <figure class="g g4"><img src="/assets/place-5.jpg" alt="من مطبخ جمر" width="800" height="600" loading="lazy" decoding="async"></figure>
+          <figure class="g g5"><img src="/assets/place-6.jpg" alt="من مطبخ جمر" width="800" height="600" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- لاقينا -->
+    <section class="section find" id="find" aria-labelledby="findTitle">
+      <div class="wrap find-grid">
+        <div>
+          <h2 class="section-title" id="findTitle">لاقينا</h2>
+          <dl class="facts">
+            <div><dt>العنوان</dt><dd>عمّان، جبل عمّان، شارع الرينبو</dd></div>
+            <div><dt>الدوام</dt><dd>كل يوم من 12 الظهر لـ 2 بالليل</dd></div>
+            <div><dt>إنستغرام</dt><dd><a href="https://www.instagram.com/jamr.amman/" target="_blank" rel="noopener" dir="ltr">@jamr.amman</a></dd></div>
+          </dl>
+          <div class="contact-btns">
+            <a class="btn" href="https://wa.me/962786181892" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.23 8.25c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>
+              راسلنا على واتساب
+            </a>
+            <a class="btn" href="tel:+962786181892">
+              <svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+              <span>اتصل فينا</span> <span dir="ltr">078 618 1892</span>
+            </a>
+          </div>
+        </div>
+        <div class="map-frame map-dark">
+          <iframe title="خريطة موقع جمر" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=35.9205%2C31.9475%2C35.9325%2C31.9555&amp;layer=mapnik&amp;marker=31.9515%2C35.9265"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer"><span translate="no">جمر</span></footer>
+  </main>
+
+  <!-- صفحة الطلب -->
+  <section class="view checkout" id="checkout" hidden aria-labelledby="checkoutTitle">
+    <div class="wrap">
+      <a class="back" href="#menu">ارجع للمنيو</a>
+      <h1 class="page-title" id="checkoutTitle" tabindex="-1">كمّل طلبك</h1>
+
+      <div class="checkout-grid">
+        <form class="order-form" id="orderForm" novalidate>
+          <fieldset class="group">
+            <legend>كيف بدك طلبك؟</legend>
+            <div class="type-cards">
+              <input class="sr" type="radio" name="type" id="t-takeaway" value="takeaway" checked>
+              <label class="type-card" for="t-takeaway"><strong>سفري</strong><span>بتاخده معك</span></label>
+              <input class="sr" type="radio" name="type" id="t-dinein" value="dinein">
+              <label class="type-card" for="t-dinein"><strong>جوا المطعم</strong><span>بتاكله عنّا</span></label>
+            </div>
+          </fieldset>
+
+          <div class="panel" data-panel="dinein" hidden>
+            <label class="field field-short">
+              <span>رقم الطاولة <small>(اختياري)</small></span>
+              <input type="text" name="table" id="table" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" spellcheck="false" dir="ltr">
+            </label>
+          </div>
+
+          <div class="two">
+            <label class="field">
+              <span>الاسم</span>
+              <input type="text" name="name" id="name" autocomplete="given-name" maxlength="60">
+            </label>
+            <label class="field">
+              <span>رقم التلفون</span>
+              <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel" spellcheck="false" placeholder="0791234567" dir="ltr">
+            </label>
+          </div>
+
+          <fieldset class="group">
+            <legend>وين نبعتلك لما يجهز؟</legend>
+            <div class="choice-row">
+              <input class="sr" type="radio" name="notify" id="n-wa" value="whatsapp" checked><label class="btn choice" for="n-wa">واتساب</label>
+              <input class="sr" type="radio" name="notify" id="n-br" value="browser"><label class="btn choice" for="n-br">إشعار عالمتصفح</label>
+            </div>
+          </fieldset>
+
+          <p class="cash">الدفع كاش عند الاستلام.</p>
+
+          <div class="errors" id="formErrors" role="alert" hidden></div>
+
+          <button class="btn btn-lg submit" type="submit" id="submitBtn">ابعت الطلب</button>
+        </form>
+
+        <aside class="invoice" aria-labelledby="invoiceTitle">
+          <h2 id="invoiceTitle">الفاتورة</h2>
+          <ul class="invoice-list" id="invoiceList"></ul>
+          <div class="invoice-row total"><span>المجموع</span><span id="totalVal"></span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- متابعة الطلب -->
+  <section class="view track" id="track" hidden aria-labelledby="trackTitle">
+    <div class="wrap track-wrap">
+      <h1 class="page-title" id="trackTitle" tabindex="-1"></h1>
+      <p class="track-type" id="trackType"></p>
+      <p class="track-eta" id="trackEta" hidden></p>
+      <ol class="steps" id="steps"></ol>
+      <p class="track-msg" id="trackMsg" role="status" aria-live="polite"></p>
+      <a class="btn" href="#menu" id="newOrder">اطلب كمان</a>
+    </div>
+  </section>
+
+  <!-- شريط السلة -->
+  <div class="cartbar" id="cartbar" hidden>
+    <div class="cartbar-info">
+      <span id="cartCount"></span>
+      <strong id="cartTotal"></strong>
+    </div>
+    <a class="btn" href="#checkout">كمّل الطلب</a>
+  </div>
+
+  <!-- نافذة التخصيص -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" id="sheet">
+      <button class="btn btn-icon sheet-close" type="button" id="sheetClose" aria-label="سكّر">×</button>
+      <div class="sheet-visual" id="sheetVisual"></div>
+      <div class="sheet-main">
+        <div class="sheet-body">
+          <h3 class="sheet-title" id="sheetTitle"></h3>
+          <p class="sheet-desc" id="sheetDesc"></p>
+          <ul class="ing-list" id="ingList"></ul>
+        </div>
+        <div class="sheet-foot">
+          <div class="qty" role="group" aria-label="الكمية">
+            <button class="btn btn-icon" type="button" id="qtyMinus" aria-label="نقّص">−</button>
+            <output id="qtyVal" aria-live="polite">1</output>
+            <button class="btn btn-icon" type="button" id="qtyPlus" aria-label="زيد">+</button>
+          </div>
+          <button class="btn add-btn" type="button" id="addBtn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="/menu.js"></script>
+  <script src="/i18n.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
